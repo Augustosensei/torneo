@@ -1,15 +1,15 @@
 <div class="container">
-  <div class="row">
-    <!-- c + tab -->
+    <div class="row">
+        <!-- c + tab -->
 
-    <div class="col">
-      <h3 class="text text-center text-primary">Torneo AFA</h3>
+        <div class="col">
+            <h3 class="text text-center text-primary">Torneo AFA</h3>
+        </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col">
-      <!--  
+    <div class="row">
+        <div class="col">
+            <!--  
           
           <div class="d-flex flex-row justify-content-sm-start justify-content-md-around">
             <div class="border d-flex flex-column justify-content-around" style="height: 600px; width: 100px">
@@ -32,91 +32,91 @@
 
 
 
-      <div class="d-flex flex-row justify-content-around mt-5">
-        <div class="d-flex flex-column justify-content-around" style="width: 150px; height: 600px;">
+            <div class="d-flex flex-row justify-content-around mt-5">
+                <div class="d-flex flex-column justify-content-around" style="width: 150px; height: 600px;">
 
-          <div *ngFor="let c of club">
-            <div class="card border-primary mb-3" style="max-width: 18rem;">
-              <div class="card-header">
+                    <div *ngFor="let c of inicio">
+                        <div class="card border-primary mb-3" style="max-width: 18rem;">
+                            <div class="card-header">
 
-                <div class="d-flex flex-row  justify-content-between">
-                  <span>  {{c.nombre}} </span>
-                  <h3 class="text text-primary">{{c.gol}}</h3>
+                                <div class="d-flex flex-row  justify-content-between">
+                                    <span>  {{c.nombre}} </span>
+                                    <h3 class="text text-primary">{{c.gol}}</h3>
+                                </div>
+
+                            </div>
+                            <div class="card-body text-primary">
+
+                                <img src={{c.img}} class="card-img-top img-fluid " style="height: 50px; width: auto;">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              
-              </div>
-              <div class="card-body text-primary">
-                
-                <img src={{c.img}} class="card-img-top img-fluid " style="height: 50px; width: auto;" >
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="d-flex flex-column justify-content-around" style="width: 150px; height: 600px;">
+                <div class="d-flex flex-column justify-content-around" style="width: 150px; height: 600px;">
 
-          <div *ngFor="let c of ganadores">
-            <div class="card border-primary mb-3" style="max-width: 18rem;">
-              <div class="card-header">
+                    <div *ngFor="let c of ganadores">
+                        <div class="card border-primary mb-3" style="max-width: 18rem;">
+                            <div class="card-header">
 
-                <div class="d-flex flex-row  justify-content-between">
-                  <span>  {{c.nombre}} </span>
-                  <h3 class="text text-primary">{{c.gol}}</h3>
+                                <div class="d-flex flex-row  justify-content-between">
+                                    <span>  {{c.nombre}} </span>
+                                    <h3 class="text text-primary">{{c.gol}}</h3>
+                                </div>
+
+                            </div>
+                            <div class="card-body text-primary">
+
+                                <img src={{c.img}} class="card-img-top img-fluid " style="height: 50px; width: auto;">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              
-              </div>
-              <div class="card-body text-primary">
-                
-                <img src={{c.img}} class="card-img-top img-fluid " style="height: 50px; width: auto;" >
-              </div>
+
+                <div class="d-flex flex-column justify-content-around" style="width: 150px; height: 600px;">
+
+                    <div *ngIf="ganador!== undefined">
+
+                        <div class="card border-primary mb-3" style="max-width: 18rem;">
+                            <div class="card-header">
+
+                                <div class="d-flex flex-row  justify-content-between">
+                                    <span>  {{ganador.nombre}} </span>
+                                    <h3 class="text text-primary">{{ganador.gol}}</h3>
+                                </div>
+
+                            </div>
+                            <div class="card-body text-primary">
+
+                                <img src={{ganador.img}} class="card-img-top img-fluid " style="height: 50px; width: auto;">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-          </div>
+
+
+
         </div>
-
-        <div class="d-flex flex-column justify-content-around" style="width: 150px; height: 600px;">
-
-         <div *ngIf="ganador!== undefined">
-
-           <div class="card border-primary mb-3" style="max-width: 18rem;">
-            <div class="card-header">
-              
-              <div class="d-flex flex-row  justify-content-between">
-                <span>  {{ganador.nombre}} </span>
-                <h3 class="text text-primary">{{ganador.gol}}</h3>
-              </div>
-              
-            </div>
-            <div class="card-body text-primary">
-              
-              <img src={{ganador.img}} class="card-img-top img-fluid " style="height: 50px; width: auto;" >
-            </div>
-          </div>
-          
-        </div>
-      </div>
-      </div>
-
-
-
     </div>
-  </div>
-  <div class="row">
-    <div class="col">
+    <div class="row">
+        <div class="col">
 
 
-      <div class="border d-flex  flex-row justify-content-center"  style="height: 70px; width: auto;">
-        <div class="d-flex  ">
-          <button (click)="equiposGanadores()" type="button" class="btn btn-primary">
+            <div class="border d-flex  flex-row justify-content-center" style="height: 70px; width: auto;">
+                <div class="d-flex  ">
+                    <button (click)="equiposGanadores()" type="button" class="btn btn-primary">
             Cargar equipos
           </button>
-          <button (click)="golesAleatorio()" type="button" class="btn btn-primary">
+                    <button (click)="golesAleatorio()" type="button" class="btn btn-primary">
             Jugar
           </button>
 
+                </div>
+
+            </div>
+
         </div>
-
-      </div>
-
     </div>
-  </div>
 </div>

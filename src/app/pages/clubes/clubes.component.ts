@@ -9,6 +9,7 @@ import { ListarClubesService } from 'src/app/_service/listar-clubes.service';
 })
 export class ClubesComponent implements OnInit {
   club: Club[] = [];
+  inicio: Club[] = [];
   clubGol!: Club;
   constructor(private clubService: ListarClubesService) {}
   ganadores: Club[] = [];
@@ -30,6 +31,17 @@ export class ClubesComponent implements OnInit {
   listar() {
     this.club = this.clubService.listarClubes();
 
+    let clubInicio: Club[] = this.club;
+do {
+this.golesAleatorio();
+} while (this.uno === this.dos || this.tres === this.cuatro);
+for (let index = 0; index < this.club.length; index++) {
+const uno = this.equipo(index +1);
+this.clubGol = clubInicio[index];
+this.clubGol.gol = uno;
+ clubInicio.splice(index, 1, this.clubGol);
+}
+this.inicio = clubInicio;
 
   }
 
