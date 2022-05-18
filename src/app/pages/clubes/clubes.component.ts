@@ -31,7 +31,7 @@ export class ClubesComponent implements OnInit {
   listar() {
     this.club = this.clubService.listarClubes();
 
-    let clubInicio: Club[] = this.club;
+    let clubInicio: Club[] = this.clubService.listarClubes(); // this.club;
 do {
 this.golesAleatorio();
 } while (this.uno === this.dos || this.tres === this.cuatro);
@@ -87,7 +87,7 @@ this.inicio = clubInicio;
 
     do {
       this.golesAleatorio();
-    } while (this.uno === this.dos || this.tres === this.cuatro);
+    } while (this.uno === this.tres   || this.uno === this.cuatro || this.dos === this.tres   || this.dos === this.cuatro);
 
     for (let index = 0; index < this.club.length; index++) {
       this.clubGol = this.club[index];
